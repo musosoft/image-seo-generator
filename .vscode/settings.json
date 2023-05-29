@@ -1,0 +1,5 @@
+{
+    "phpCodeSniffer.standardCustom": "vendor/codeatcode/codeatcs/CodeatCodingStandard/ruleset.xml",
+    "phpCodeSniffer.standard": "Custom",
+    "phpCodeSniffer.autoExecutable": true
+}

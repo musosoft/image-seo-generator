@@ -1,0 +1,68 @@
+{
+    "name": "musosoft/image-seo-generator",
+    "description": "WordPress Image Title and Alt Text AI Generation Plugin",
+    "license": "GPL-3.0-or-later",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Roman Kovac",
+            "email": "roman@muso.sk",
+            "homepage": "https://muso.sk"
+        }
+    ],
+    "homepage": "https://github.com/musosoft/image-seo-generator",
+    "require": {
+        "php": ">=7.4",
+        "composer/installers": "1.x",
+        "decodelabs/tagged": "^0.11.9",
+        "inpsyde/wp-context": "1.3.*",
+        "seravo/wp-custom-bulk-actions": "dev-master",
+        "wpdesk/wp-notice": "^3.2",
+        "yahnis-elsts/plugin-update-checker": "^4.9"
+    },
+    "require-dev": {
+        "codeatcode/codeatcs": "^1.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "1.0.0",
+        "ergebnis/composer-normalize": "^2.6"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/ayecode/wp-super-duper"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Image_SEO_Generator\\Backend\\": "backend/",
+            "Image_SEO_Generator\\Ajax\\": "ajax/",
+            "Image_SEO_Generator\\Cli\\": "cli/",
+            "Image_SEO_Generator\\Engine\\": "engine/"
+        },
+        "files": [
+            "vendor/wp-custom-bulk-actions/custom-bulk-actions.php"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "phpro/grumphp": true
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "vendor/{$name}/": {
+                "3": "seravo/wp-custom-bulk-actions"
+            }
+        },
+        "patches": {
+            "ayecode/wp-super-duper": {
+                "Fix v2": "https://patch-diff.githubusercontent.com/raw/AyeCode/wp-super-duper/pull/25.patch"
+            }
+        }
+    }
+}
